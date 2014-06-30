@@ -23,7 +23,7 @@ body {
     margin-top: 10px;
     background: #FFCB1B;
     opacity: 0.75;
-    padding: 20px 0;
+    padding: 15px 0px 15px 0px;
     -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.2);
             box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
@@ -44,6 +44,7 @@ body {
 
 .content {
     background: #fff;
+    padding-bottom: 5px;
 }
 
 /* logo */
