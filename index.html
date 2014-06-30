@@ -15,11 +15,19 @@
     </head>
     <body>
 
+    <div class="leftlogo">
+        <div id="message"></div>
+        <br />
+        <div class="tubbycat">        
+        </div>  
+   </div>
+    
 	<div class="container">
-            <div class="content" ng-controller="taskController" ng-mousemove="reOrder()">
-                <div class="headertext">
-                    <h1>~ toodler <span class="glyphicon glyphicon-heart"></span></h1>
-                </div>
+       <div class="content" ng-controller="taskController" ng-mousemove="reOrder()">
+          <div class="headertext">
+                    <h1>~ toodler <span class="glyphicon glyphicon-heart"></span></h1>              
+            </div>
+           
             <p class="tagline">the friendly to-do list :D</p>
                 
             <form>
@@ -50,7 +58,7 @@
                     <li class="taskItem" ng-repeat="taskItem in taskItem track by $index" ng-model="taskItem" style="cursor: move;">
                         <div class="input-group">
                             <span class="input-group-addon" style="background-color:transparent; border:0px;">
-                                <input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="save()">
+                                <input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="save(); testAlert();">
                             </span>
                                 <input type="text" class="complete-{{taskItem.complete}} form-control" ng-model="taskItem.description" style="width:75%;">
                             <div class="form-control-right">
@@ -67,11 +75,13 @@
                 
                 </div>                
             </ul><!-- taskList -->      
-            </div>
+            </div><!--empty div-->
             </div><!-- content -->
  	</div><!-- container -->
         <footer>
-            <p>~based on NoGo~</p>
+            <div>
+                <p>~ an angular app ~</p>
+            </div>
         </footer>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>        

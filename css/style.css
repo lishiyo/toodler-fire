@@ -19,6 +19,7 @@ body {
     font-family: 'Open Sans',sans-serif;
 }
 /* super basic grid structure */
+
 .container {
     width: 600px;
     margin: 0 auto;
@@ -389,9 +390,8 @@ footer {
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
-    /* color: #777; */
+    color: #777; 
     margin-top:20px;
-    color: rgba(255,255,255,0.8);
 }
 
 footer a {
@@ -466,4 +466,60 @@ input[type=checkbox]:focus.taskCheckbox {
     border: none;
     outline: none;
     padding: 0 100px;
+}
+
+/* graphics tubbycat*/
+#message {
+    margin-top:0px;
+}
+
+.leftlogo{
+    position: fixed;
+    bottom: 80;
+    left: 140;
+    width: 80px;
+    height: 210px;   
+}
+
+.tubbycat{
+    position: fixed;
+    bottom: 60;
+    left: 120;
+    width: 140px;
+    height: 170px; 
+    background-color: transparent;
+    background-image: url('/images/cute_pusheen2.png');
+    background-repeat: no-repeat;
+    opacity: 0.90;
+}
+
+.tubbytext{
+    font-size: 1.25rem;
+    text-align: left;
+    /*comment out color to switch to blue h1*/
+    /*color: #FFCB1B;*/
+}
+
+.animated { 
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+} 
+
+@-webkit-keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    40% {-webkit-transform: translateY(-30px);} 
+    60% {-webkit-transform: translateY(-15px);} 
+} 
+
+@keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+} 
+
+.bounce { 
+    -webkit-animation-name: bounce; 
+    animation-name: bounce; 
 }

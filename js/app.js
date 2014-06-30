@@ -55,8 +55,38 @@ app.controller('taskController', function($scope) {
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
     };
     $scope.save = function () {
-        localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
+        localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));      
     };
+    
+    var checked = true;
+    $scope.testAlert = function () {       
+       if (checked) {
+           $("#message").fadeIn("fast", function() {
+           $("#message").fadeIn("slow").html('<h1 class="tubbytext">yay!</h1>');
+            setTimeout(function() {
+            	$("#message").fadeOut("slow");
+        	}, 800);
+       	}); 
+           $(".tubbycat").addClass("animated bounce");
+           checked = false;
+       } else {
+           $(".tubbycat").removeClass("animated bounce");
+           checked = true;
+       };
+        
+       /** totally didn't work     	
+       if (!($scope.taskItem.complete)) {
+           $(".tubbycat").toggleClass("animated bounce");
+       };
+       
+       if (!$('input.input-group[type="text"]').hasClass("complete-true")) {
+           $(".tubbycat").toggleClass("animated bounce");           
+       } else {
+           $(".tubbycat").removeClass("animated bounce");
+       };  
+       **/
+    };
+ 
    	$scope.reOrder = function () { 
         var completedTask = $scope.taskItem;
         $scope.taskItem = [];
