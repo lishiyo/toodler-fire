@@ -49,6 +49,12 @@ body {
     padding-bottom: 5px;
 }
 
+.form-control-right{
+    float:right; 
+    width: 25%; 
+    text-align: right;
+}
+
 /* logo */
 h1 {
     font-family: 'Rokkitt', 'Open Sans', sans-serif;
@@ -120,6 +126,11 @@ input[type="date"], input[type="text"], select {
             transition: background 0.3s;
 }
 
+input[type="text"].form-control{
+    padding: 7px 0px 5px 15px;
+    font-weight: 600;
+}
+
 input[type="date"] {
     cursor: pointer;
 }
@@ -127,6 +138,13 @@ input[type="date"] {
 input[type="date"]:focus, input[type="text"]:focus, select:focus {
     outline: none;
     background: #ecf0f1;
+}
+
+/*taskItem edit task */
+.form-control:focus{
+    -webkit-box-shadow: 
+        inset 0px 1px 3px rgba(95, 118, 122, 0.10),
+        0px 0px 2px rgba(0, 143, 255, 0.5);
 }
 
 ::-webkit-input-placeholder {
@@ -188,10 +206,69 @@ button {
             transition: all 0.3s;
 }
 
+.btn-xs {
+    height:30px;
+    width:30px;
+    margin-left:0px;
+    margin-right:0px;
+    border: 0px;
+}
+
+/* trashcan icon */
+.icon-xs {
+    position: static;
+    vertical-align: middle;
+    margin: 0 auto;
+    font-size: 1.10rem;
+    opacity: 0.45;
+}
+.icon-xs:hover{
+    color: #FF1259;
+    opacity: 1;
+    font-size: 1.35rem;
+    
+}
+.icon-xs:active{
+    color: #FF1259;
+    opacity: 1;
+    font-size: 1.30rem;
+}
+.icon-xs:focus{
+    color: #FF1259;
+    opacity: 1;
+    font-size: 1.35rem;
+}
+
+/* hide the button*/
+.btn-default{
+    border: 0px;
+}
+.btn-default:hover{
+     background-color:transparent;
+    border: 0px;
+}
+.btn-default:active{
+     background-color:transparent;
+    border: 0px;
+}
+.btn-default:focus{
+     background-color:transparent;
+    border: 0px;
+}
+.btn-default:visited{
+     background-color:transparent;
+    border: 0px;
+}
+.btn:hover, .btn:focus, .btn:active:focus, .btn.active:focus{
+    border: 0px;
+    outline: 0px;
+}
+
+
 .icon {
     position: absolute;
     top: 30%;
-    left: 18px;
+    left: 20px;
     font-size: 20px;
 }
 
@@ -207,13 +284,12 @@ button {
 
 .taskDelete {
     background: #e74c3c;
-    background: #FF55B6;
-    background: #FF3E96;
+    background: #FF1259;
     padding-left: 30px;
 }
 
 .taskDelete:hover {
-    background: #CD3278;
+    background: #CF135E;
 }
 
 button.taskDelete{
@@ -232,7 +308,7 @@ button.taskAdd{
 
 .taskItem {
     border-top: 1px solid #e5e5e5;
-    padding: 15px 0;
+    padding: 10px 0;
     color: #777;
     font-weight: 600;
     font-size: 13px;
@@ -273,14 +349,13 @@ button.taskAdd{
     background: #444;
     vertical-align: middle;
     color: #fff;
-    padding: 10px;
+    padding: 8px;
     width: 75px;
     text-align: center;
-    border-radius: 2px;
-    float: right;
-    font-weight: normal;
+    border-radius: 2px;    
+    font-weight: 600;
     text-transform: uppercase;
-    margin-right: 20px;
+    margin-right: 0px;
     font-family: 'Open Sans', 'Rokkit', sans-serif;
 }
 
@@ -289,24 +364,25 @@ button.taskAdd{
 }
 
 .category-Personal {
-    background: #2980b9;
+    background: #33CCFF;
 }
 
 .category-Work {
-    background: #8e44ad;
+    background: #17FC82;
 }
 
-.category-School {
-    background: #f39c12;
+.category-Class {
+    background: #FF45CD;
 }
 
-.category-Cleaning {
-    background: #16a085;
+.category-Errands {
+    background: #FFD000;
 }
 
 .category-Other {
-    background: #d35400;
+    background: #B83DFF;
 }
+
 
 footer {
     text-align: center;
@@ -336,15 +412,22 @@ footer a {
 
 input[type=checkbox].taskCheckbox {
     margin-bottom: 5px;
+    outline: none;
+}
+input[type=checkbox]:focus.taskCheckbox {
+    margin-bottom: 5px;
+    outline: none;
 }
 
 .taskCheckbox:focus {
     outline: none;
+    border: none;
 }
 
 .taskCheckbox:before, .taskCheckbox:checked:before {
     font-family: 'FontAwesome';
     color: #444;
+    color: rgba(0,0,0,0.3);
     font-size: 20px;
     -webkit-transition: all 0.3s;
             transition: all 0.3s;
@@ -357,7 +440,7 @@ input[type=checkbox].taskCheckbox {
 
 .taskCheckbox:checked:before {
     content: '\f14a';
-    color: #16a085;
+    color: #33CCFF;
 }
 /* custom select menu */
 .taskCategory {

@@ -1,5 +1,5 @@
 //Define angular app
-var app = angular.module('TaskManager', []); 
+var app = angular.module('TaskManager', ['ui.sortable']); 
 
 //controllers
 app.controller('taskController', function($scope) {
@@ -40,6 +40,10 @@ app.controller('taskController', function($scope) {
         $scope.newTaskCategory = $scope.categories;
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
     };
+     $scope.removeTask = function (index) {
+      $scope.taskItem.splice(index, 1);
+      localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
+    };
     $scope.deleteTask = function () {
         var completedTask = $scope.taskItem;
         $scope.taskItem = [];
@@ -50,8 +54,15 @@ app.controller('taskController', function($scope) {
         });
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
     };
-    
     $scope.save = function () {
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
-    }
+    };
+   	$scope.reOrder = function () { 
+        var completedTask = $scope.taskItem;
+        $scope.taskItem = [];
+     	angular.forEach(completedTask, function (taskItem) {
+                $scope.taskItem.push(taskItem);        
+    	});
+    	localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
+    };
 });
