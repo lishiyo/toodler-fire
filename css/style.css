@@ -12,16 +12,17 @@ html {
 
 body {
     background: #b1f6cb;
-    background-image: url(/images/bg-nyc_sunrise.jpg);
-    background-position: 66% 15%;
+    background-image: url(/images/bg-MNT_corner.jpg);
+    background-position: 0% 0%;
     font-family: 'Open Sans',sans-serif;
 }
 /* super basic grid structure */
 .container {
     width: 600px;
     margin: 0 auto;
-    margin-top: 20px;
-    background: #ffffff;
+    margin-top: 10px;
+    background: #FFCB1B;
+    opacity: 0.75;
     padding: 20px 0;
     -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.2);
             box-shadow: 0 0 2px rgba(0,0,0,0.2);
@@ -49,7 +50,7 @@ body {
 h1 {
     font-family: 'Rokkitt', 'Open Sans', sans-serif;
     color: #666;
-    color: #00ced1;
+    color: #33CCFF;
     text-align: center;
     font-weight: 400;
     margin: 0;
@@ -59,6 +60,7 @@ h1 {
     text-align: center;
     width: 100%;
     margin: 0 auto;
+    padding-top: 5px;
 }
 .tagline {
     margin-top: 0px;
@@ -148,12 +150,12 @@ input:-moz-placeholder {
 
 input:focus::-webkit-input-placeholder {
     color: #95a5a6;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 input:focus::-moz-input-placeholder {
     color: #95a5a6;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 label {
@@ -173,7 +175,7 @@ button {
     border: none;
     outline: none;
     height: 50px;
-    width: 160px;
+    width: 150px;
     font-size: 1em;
     color: #fff;
     cursor: pointer;
@@ -192,22 +194,23 @@ button {
 
 .taskAdd {
     background: #444;
-    background: #817E84;
+    background: #616161;
     padding-left: 15px;
 }
 
 .taskAdd:hover {
-    background: #5D5A5F;
+    background: #242424;
 }
 
 .taskDelete {
     background: #e74c3c;
     background: #FF55B6;
+    background: #FF3E96;
     padding-left: 30px;
 }
 
 .taskDelete:hover {
-    background: #CD0D86;
+    background: #CD3278;
 }
 
 button.taskDelete{
@@ -228,7 +231,7 @@ button.taskAdd{
     border-top: 1px solid #e5e5e5;
     padding: 15px 0;
     color: #777;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.5px;
 }
