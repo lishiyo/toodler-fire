@@ -13,7 +13,9 @@ html {
 body {
     background: #b1f6cb;
     background-image: url(/images/bg-MNT_corner.jpg);
-    background-position: 0% 0%;
+    background-position: 0% 33%;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
     font-family: 'Open Sans',sans-serif;
 }
 /* super basic grid structure */
