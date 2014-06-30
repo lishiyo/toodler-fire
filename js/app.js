@@ -14,8 +14,8 @@ app.controller('taskController', function($scope) {
     $scope.categories = [
         {name: 'Personal'},
         {name: 'Work'},
-        {name: 'School'},
-        {name: 'Cleaning'},
+        {name: 'Class'},
+        {name: 'Errands'},
         {name: 'Other'}
     ];
     $scope.newTaskCategory = $scope.categories;
