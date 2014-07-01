@@ -58,6 +58,7 @@ app.controller('taskController', function($scope) {
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));      
     };
     
+    /** what totally didn't work 
     var checked = true;
     $scope.testAlert = function () {       
        if (checked) {
@@ -74,7 +75,7 @@ app.controller('taskController', function($scope) {
            checked = true;
        };
         
-       /** totally didn't work     	
+           	
        if (!($scope.taskItem.complete)) {
            $(".tubbycat").toggleClass("animated bounce");
        };
@@ -84,8 +85,9 @@ app.controller('taskController', function($scope) {
        } else {
            $(".tubbycat").removeClass("animated bounce");
        };  
-       **/
+       
     };
+    **/
  
    	$scope.reOrder = function () { 
         var completedTask = $scope.taskItem;
