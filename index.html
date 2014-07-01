@@ -10,6 +10,7 @@
         <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type='text/css' href="/css/style.css">
+        <link rel="stylesheet" type='text/css' href="/css/animations.css">
         <script src="/bower_components/jquery/dist/jquery.js"></script>
         <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
     </head>
@@ -58,7 +59,7 @@
                     <li class="taskItem" ng-repeat="taskItem in taskItem track by $index" ng-model="taskItem" style="cursor: move;">
                         <div class="input-group">
                             <span class="input-group-addon" style="background-color:transparent; border:0px;">
-                                <input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="tubbyBounceAng(); save();">
+                                <input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="save(); tubbyJellyAng();">
                             </span>
                                 <input type="text" class="complete-{{taskItem.complete}} form-control" ng-model="taskItem.description" style="width:75%;">
                             <div class="form-control-right">

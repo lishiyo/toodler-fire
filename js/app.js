@@ -57,7 +57,26 @@ app.controller('taskController', function($scope) {
     $scope.save = function () {
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));      
     };
+
+    //animation - jelly
+    $scope.tubbyJellyAng = function() {           
+ 		$(".taskCheckbox").change(function(){
+            $(".tubbycat").removeClass("jelly-target");
+            if($(this).is(":checked")) {    
+                //$(".tubbycat").removeClass("jelly-target");
+                $("#message").fadeIn("fast").html('<h1 class="tubbytext">yay!</h1>');
+                        setTimeout(function() {
+                            $("#message").fadeOut("slow");
+                        }, 600);                   
+                $(".tubbycat").addClass("jelly-target");
+                
+            } //else {
+                //$(".tubbycat").removeClass("animated bounce");
+            //}
+        });
+    };
     
+    // animation - bounce
     $scope.tubbyBounceAng = function() {           
  		$(".taskCheckbox").change(function(){
             $(".tubbycat").removeClass("animated bounce");
@@ -74,6 +93,7 @@ app.controller('taskController', function($scope) {
             //}
         });
     };
+    
     
     /** what totally didn't work 
     var checked = true;
