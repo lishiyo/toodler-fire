@@ -58,7 +58,7 @@
                     <li class="taskItem" ng-repeat="taskItem in taskItem track by $index" ng-model="taskItem" style="cursor: move;">
                         <div class="input-group">
                             <span class="input-group-addon" style="background-color:transparent; border:0px;">
-                                <input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="save(); testAlert();">
+                                <input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="tubbyBounceAng(); save();">
                             </span>
                                 <input type="text" class="complete-{{taskItem.complete}} form-control" ng-model="taskItem.description" style="width:75%;">
                             <div class="form-control-right">
@@ -87,11 +87,21 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>        
         <script src="/bower_components/angular-ui-sortable/sortable.js"></script>
         <script src="/js/app.js"></script>
+
         <script>
-            $(document).ready(function(){
-                tubbyBounce();
+             $(document).ready(function(){                
+                $(".tubbycat").removeClass("animated bounce");
+            });
+        </script>
+        <!--
+        <script>
+            
+            $(document).ready(function(){                
+                tubbyBounce(); 
+                $(".tubbycat").removeClass("animated bounce");
             });
             
+            //doesn't work for new tasks
             function tubbyBounce () {
                 /** if checked->uncheck, no confirm. if uncheck-> check, confirm.
                 $(".taskCheckbox").change(function(){
@@ -103,18 +113,19 @@
                 **/
                 $(".taskCheckbox").change(function(){
                     if($(this).is(":checked")) {
-                       
+                       $(".tubbycat").removeClass("animated bounce");
                        $("#message").fadeIn("fast").html('<h1 class="tubbytext">yay!</h1>');
                         setTimeout(function() {
                             $("#message").fadeOut("slow");
                         }, 800);
                         
-                        $(".tubbycat").toggleClass("animated bounce");
+                        $(".tubbycat").addClass("animated bounce");
                     } else {
                         $(".tubbycat").removeClass("animated bounce");
                     }
                 });         
             };
         </script>
+        -->
     </body>
 </html>

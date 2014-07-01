@@ -58,6 +58,23 @@ app.controller('taskController', function($scope) {
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));      
     };
     
+    $scope.tubbyBounceAng = function() {           
+ 		$(".taskCheckbox").change(function(){
+            $(".tubbycat").removeClass("animated bounce");
+            if($(this).is(":checked")) {    
+                //$(".tubbycat").removeClass("animated bounce");
+                $("#message").fadeIn("fast").html('<h1 class="tubbytext">yay!</h1>');
+                        setTimeout(function() {
+                            $("#message").fadeOut("slow");
+                        }, 600);                   
+                $(".tubbycat").addClass("animated bounce");
+                
+            } //else {
+                //$(".tubbycat").removeClass("animated bounce");
+            //}
+        });
+    };
+    
     /** what totally didn't work 
     var checked = true;
     $scope.testAlert = function () {       
