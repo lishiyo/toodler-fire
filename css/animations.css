@@ -12,18 +12,20 @@
     margin-top:0px;
 }
 
+/*div for tubbytext*/
 .leftlogo{
     position: fixed;
-    bottom: 80;
-    left: 140;
-    width: 80px;
+    bottom: 12.5%;
+    left: 4.5%;
+    width: 200px;
     height: 210px;   
 }
 
+/*the picture*/
 .tubbycat{
     position: fixed;
-    bottom: 60;
-    left: 120;
+    bottom: 8%;
+    left: 8%;
     width: 140px;
     height: 170px; 
     background-color: transparent;
@@ -34,7 +36,7 @@
 
 .tubbytext{
     font-size: 1.25rem;
-    text-align: left;
+    text-align: center;
     /*comment out color to switch to blue h1*/
     /*color: #FFCB1B;*/
 }

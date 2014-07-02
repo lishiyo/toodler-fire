@@ -58,14 +58,22 @@ app.controller('taskController', function($scope) {
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));      
     };
 
+    //tubby animations
+    
+    var messageArray = ['yaaay :D', 'high five!', 'awesome!', 
+                        '*dance dance*', 'super job!', 'cheeri-o!', 
+                        'toodle-pip, my good sir!', '*do the jelly*',
+                        'keep it up! :D', '*doffs cap*', "you're a rockstar"];   
+    
     //animation - jelly
     $scope.tubbyJellyAng = function() {           
  		$(".taskCheckbox").change(function(){
             $(".tubbycat").removeClass("jelly-target");
             if($(this).is(":checked")) {    
                 //$(".tubbycat").removeClass("jelly-target");
-                $("#message").fadeIn("fast").html('<h1 class="tubbytext">yay!</h1>');
-                        setTimeout(function() {
+                 var rand = messageArray[Math.floor(Math.random()*messageArray.length)];                                                   
+                $("#message").fadeIn("fast").html('<h1 class="tubbytext">'+rand+'</h1>');
+                setTimeout(function() {
                             $("#message").fadeOut("slow");
                         }, 600);                   
                 $(".tubbycat").addClass("jelly-target");
@@ -82,7 +90,8 @@ app.controller('taskController', function($scope) {
             $(".tubbycat").removeClass("animated bounce");
             if($(this).is(":checked")) {    
                 //$(".tubbycat").removeClass("animated bounce");
-                $("#message").fadeIn("fast").html('<h1 class="tubbytext">yay!</h1>');
+                var rand = messageArray[Math.floor(Math.random()*messageArray.length)];    
+                $("#message").fadeIn("fast").html('<h1 class="tubbytext">'+rand+'</h1>');
                         setTimeout(function() {
                             $("#message").fadeOut("slow");
                         }, 600);                   
@@ -95,36 +104,6 @@ app.controller('taskController', function($scope) {
     };
     
     
-    /** what totally didn't work 
-    var checked = true;
-    $scope.testAlert = function () {       
-       if (checked) {
-           $("#message").fadeIn("fast", function() {
-           $("#message").fadeIn("slow").html('<h1 class="tubbytext">yay!</h1>');
-            setTimeout(function() {
-            	$("#message").fadeOut("slow");
-        	}, 800);
-       	}); 
-           $(".tubbycat").addClass("animated bounce");
-           checked = false;
-       } else {
-           $(".tubbycat").removeClass("animated bounce");
-           checked = true;
-       };
-        
-           	
-       if (!($scope.taskItem.complete)) {
-           $(".tubbycat").toggleClass("animated bounce");
-       };
-       
-       if (!$('input.input-group[type="text"]').hasClass("complete-true")) {
-           $(".tubbycat").toggleClass("animated bounce");           
-       } else {
-           $(".tubbycat").removeClass("animated bounce");
-       };  
-       
-    };
-    **/
  
    	$scope.reOrder = function () { 
         var completedTask = $scope.taskItem;
