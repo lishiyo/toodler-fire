@@ -1,0 +1,33 @@
+{
+  "name": "toodler-userapp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lishiyo/toodler",
+  "authors": [
+    "Connie Li"
+  ],
+  "description": "testing toodler auth with userapp.io",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "toodler",
+    "angularJS",
+    "to-do"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-sortable": "*",
+    "angular-ui-sortable": "~0.12.8",
+    "userapp-angular": "~2.0.4",
+      "angular-route": "~1.2.x"
+  }
+}
