@@ -1,6 +1,7 @@
 //controllers
-var app = angular.module('TaskManager', ['ui.sortable', 'ngRoute', 'UserApp']); 
+var app = angular.module('myApp.controllers', []); 
 
+/**
 app.config(function($routeProvider) {
 	
 	$routeProvider.when('/signup', {templateUrl: 'partials/signup.html', public: true});
@@ -15,7 +16,7 @@ app.config(function($routeProvider) {
 app.run(function(user) {
 	user.init({ appId: '53b106ec39c1a' });
 });
-
+**/
     
 app.controller('taskController', function($scope) {
     $scope.today = new Date();
