@@ -9,9 +9,9 @@ var app = angular.module('TaskManager', ['myApp.controllers','ui.sortable', 'ngR
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/login', {templateUrl: 'partials/login.html', login: true});
 	$routeProvider.when('/signup', {templateUrl: 'partials/signup.html', public: true});
-	//$routeProvider.when('/verify-email', {templateUrl: 'partials/verify-email.html', verify_email: true});
-	//$routeProvider.when('/reset-password', {templateUrl: 'partials/reset-password.html', public: true});
-	//$routeProvider.when('/set-password', {templateUrl: 'partials/set-password.html', set_password: true});
+	$routeProvider.when('/verify-email', {templateUrl: 'partials/verify-email.html', verify_email: true});
+	$routeProvider.when('/reset-password', {templateUrl: 'partials/reset-password.html', public: true});
+	$routeProvider.when('/set-password', {templateUrl: 'partials/set-password.html', set_password: true});
 	$routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'taskController'});
 	//$routeProvider.when('/', {templateUrl: 'index.html'});
 	$routeProvider.otherwise({redirectTo: '/home'});
