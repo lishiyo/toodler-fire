@@ -1,22 +1,5 @@
 //controllers
 var app = angular.module('myApp.controllers', []); 
-
-/**
-app.config(function($routeProvider) {
-	
-	$routeProvider.when('/signup', {templateUrl: 'partials/signup.html', public: true});
-    $routeProvider.when('/login', {templateUrl: 'partials/login.html', login: true});
-	//$routeProvider.when('/verify-email', {templateUrl: 'partials/verify-email.html', verify_email: true});
-	//$routeProvider.when('/reset-password', {templateUrl: 'partials/reset-password.html', public: true});
-	//$routeProvider.when('/set-password', {templateUrl: 'partials/set-password.html', set_password: true});
-	$routeProvider.when('/', {templateUrl: 'index.html', controller: 'taskController'});
-	$routeProvider.otherwise({redirectTo: '/'});
-});
-
-app.run(function(user) {
-	user.init({ appId: '53b106ec39c1a' });
-});
-**/
     
 app.controller('taskController', function($scope) {
     $scope.today = new Date();
