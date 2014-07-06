@@ -1,0 +1,58 @@
+
+	<div class="container" ng-show="user.authenticated">
+        
+       <div class="content" ng-controller="taskController" ng-mousemove="reOrder()">
+          <div class="headertext">
+                    <h1>~ toodler <span class="glyphicon glyphicon-heart"></span></h1>              
+            </div>
+           
+            <p class="tagline">the friendly to-do list :D</p>
+                
+            <form>
+                <div class="inputContainer">
+                    <input type="text" id="description" class="taskName" placeholder="on the path to world domination" ng-model="newTask">
+                    <label for="description">To-Do</label>
+                </div>
+                <div class="inputContainer half last">
+                    <i class="fa fa-caret-down selectArrow"></i>
+                    <select id="category" class="taskCategory" ng-model="newTaskCategory" ng-options="obj.name for obj in categories">
+                        <option class="disabled" value="">Choose a category</option>
+                    </select>
+                    <label for="category">Category</label>
+                </div>
+                <div class="inputContainer half last right">
+                    <input type="date" id="dueDate" class="taskDate" ng-model="newTaskDate">
+                    <label for="dueDate">Due Date</label>
+                </div>
+                <div class="row">
+                    <button class="taskAdd" ng-click="addNew()"><i class="fa fa-plus icon"></i>Add</button>
+                    <button class="taskDelete" ng-click="deleteTask()"><i class="fa fa-trash-o icon"></i>Delete</button>
+                </div>
+            </form>
+            
+            <div>            
+            <ul class="taskList">
+                <div ui-sortable ng-model="taskItem">
+                    <li class="taskItem" ng-repeat="taskItem in taskItem track by $index" ng-model="taskItem" style="cursor: move;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background-color:transparent; border:0px;">
+                                <input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="save(); tubbyJellyAng();">
+                            </span>
+                                <input type="text" class="complete-{{taskItem.complete}} form-control" ng-model="taskItem.description" style="width:75%;">
+                            <div class="form-control-right">
+                                <span class="category-{{taskItem.category}}">{{taskItem.category}}</span>                 
+                                <button class="btn btn-default btn-xs" ng-click="removeTask($index)" aria-label="Remove">
+                                    <i class="fa fa-trash-o icon-xs"></i>
+                                </button>
+                            </div>                            
+                        </div><!--end input-group row-->
+                        
+                        <strong class="taskDate complete-{{taskItem.complete}}"><i class="fa fa-calendar"></i>{{taskItem.date | date : 'mediumDate'}}</strong>
+                                    
+                    </li>                      
+                
+                </div>                
+            </ul><!-- taskList -->      
+            </div><!--empty div-->
+            </div><!-- content -->
+ 	</div><!-- container -->

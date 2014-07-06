@@ -12,8 +12,9 @@ app.config(['$routeProvider', function($routeProvider) {
 	//$routeProvider.when('/verify-email', {templateUrl: 'partials/verify-email.html', verify_email: true});
 	//$routeProvider.when('/reset-password', {templateUrl: 'partials/reset-password.html', public: true});
 	//$routeProvider.when('/set-password', {templateUrl: 'partials/set-password.html', set_password: true});
-	$routeProvider.when('/', {templateUrl: 'index.html', controller: 'taskController'});
-	$routeProvider.otherwise({redirectTo: '/'});
+	$routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'taskController'});
+	//$routeProvider.when('/', {templateUrl: 'index.html'});
+	$routeProvider.otherwise({redirectTo: '/home'});
 }]);
 /**
 app.config(function ($routeProvider, $locationProvider) {
